@@ -836,6 +836,10 @@ body {
         padding-bottom: 32px;
     }
 
+    .projects-grid {
+        grid-template-columns: 1fr;
+    }
+
     .certification-card {
         flex-direction: column;
         text-align: center;
