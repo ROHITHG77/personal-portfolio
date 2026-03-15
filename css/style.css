@@ -457,133 +457,106 @@ body {
     padding: 100px 0;
 }
 
-.education-timeline {
-    max-width: 800px;
+.education-list {
+    max-width: 720px;
     margin: 0 auto;
-    position: relative;
-}
-
-.education-timeline::before {
-    content: '';
-    position: absolute;
-    left: 20px;
-    top: 0;
-    bottom: 0;
-    width: 2px;
-    background: linear-gradient(180deg, var(--accent-blue), var(--accent-purple));
-    border-radius: 2px;
-}
-
-.education-item {
     display: flex;
-    gap: 24px;
-    margin-bottom: 40px;
-    position: relative;
+    flex-direction: column;
+    gap: 48px;
 }
 
-.education-item:last-child {
-    margin-bottom: 0;
+.edu-item {
+    display: grid;
+    grid-template-columns: 140px 1fr;
+    gap: 32px;
+    padding-bottom: 48px;
+    border-bottom: 1px solid var(--border-color);
 }
 
-.education-marker {
-    width: 42px;
-    height: 42px;
-    min-width: 42px;
-    background: var(--dark-200);
-    border: 2px solid var(--accent-blue);
-    border-radius: 50%;
-    position: relative;
-    z-index: 1;
+.edu-item:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
 }
 
-.education-marker::after {
-    content: '';
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 12px;
-    height: 12px;
-    background: var(--accent-blue);
-    border-radius: 50%;
+.edu-left {
+    padding-top: 4px;
 }
 
-.education-content {
-    flex: 1;
-    background: var(--dark-200);
-    border: 1px solid var(--border-color);
-    border-radius: 16px;
-    padding: 24px;
-    transition: all 0.3s ease;
+.edu-date {
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--text-secondary);
+    letter-spacing: 0.02em;
 }
 
-.education-content:hover {
-    border-color: rgba(59, 130, 246, 0.3);
-    transform: translateX(4px);
+.edu-right {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
 }
 
-.education-header {
+.edu-header-row {
     display: flex;
     align-items: center;
-    gap: 12px;
-    margin-bottom: 12px;
+    gap: 16px;
     flex-wrap: wrap;
 }
 
-.education-year {
-    font-size: 14px;
-    color: var(--accent-blue);
-    font-weight: 500;
+.edu-title {
+    font-size: 20px;
+    font-weight: 600;
+    color: var(--text-primary);
 }
 
-.education-status {
-    font-size: 12px;
+.edu-tag {
+    font-size: 11px;
+    font-weight: 500;
     padding: 4px 10px;
-    border-radius: 9999px;
-    font-weight: 500;
+    border-radius: 4px;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
 }
 
-.education-status.ongoing {
-    background: rgba(59, 130, 246, 0.15);
+.edu-tag-ongoing {
+    background: rgba(59, 130, 246, 0.1);
     color: var(--accent-blue);
 }
 
-.education-status.completed {
-    background: rgba(34, 197, 94, 0.15);
+.edu-tag-done {
+    background: rgba(34, 197, 94, 0.1);
     color: #22c55e;
 }
 
-.education-degree {
-    font-size: 20px;
-    font-weight: 600;
-    margin-bottom: 8px;
-}
-
-.education-institution {
+.edu-school {
     font-size: 15px;
     color: var(--text-secondary);
-    margin-bottom: 4px;
 }
 
-.education-stream {
+.edu-stream {
     font-size: 14px;
-    color: var(--accent-purple);
+    color: var(--text-secondary);
+    opacity: 0.7;
 }
 
-.education-subjects {
+.edu-courses {
     display: flex;
     flex-wrap: wrap;
-    gap: 8px;
-    margin-top: 12px;
+    gap: 6px;
+    margin-top: 8px;
 }
 
-.education-subjects span {
+.edu-courses span {
     font-size: 12px;
-    padding: 6px 12px;
-    background: rgba(99, 68, 245, 0.1);
-    color: var(--accent-purple);
-    border-radius: 9999px;
-    border: 1px solid rgba(99, 68, 245, 0.2);
+    color: var(--text-secondary);
+    padding: 4px 0;
+    position: relative;
+}
+
+.edu-courses span:not(:last-child)::after {
+    content: '·';
+    margin-left: 6px;
+    color: var(--text-secondary);
+    opacity: 0.5;
 }
 
 .certifications-section {
@@ -857,31 +830,10 @@ body {
         text-align: center;
     }
 
-    .education-timeline::before {
-        left: 16px;
-    }
-
-    .education-marker {
-        width: 34px;
-        height: 34px;
-        min-width: 34px;
-    }
-
-    .education-marker::after {
-        width: 10px;
-        height: 10px;
-    }
-
-    .education-item {
+    .edu-item {
+        grid-template-columns: 1fr;
         gap: 16px;
-    }
-
-    .education-content {
-        padding: 20px;
-    }
-
-    .education-degree {
-        font-size: 18px;
+        padding-bottom: 32px;
     }
 
     .certification-card {
@@ -912,7 +864,7 @@ body {
         gap: 40px;
     }
 
-    .education-header {
+    .edu-header-row {
         flex-direction: column;
         align-items: flex-start;
         gap: 8px;
